@@ -12,3 +12,9 @@ def credit_card_mask(password):
         hidden_pass = "".join(lst_pass)
 
         return hidden_pass
+    
+    # if len(password) <= 4:
+    #     return password
+
+    # else:
+    #     return '#'*(len(password)-4) + password[-4:]
