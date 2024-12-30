@@ -5,5 +5,5 @@ def uni_total(character):
 
     for cha in char_list:
         ascii_total += ord(cha)
-    
+
     return ascii_total
