@@ -5,7 +5,7 @@ def find_needle(haystack):
     for hay in haystack:
         if hay == "needle":
             needle_count += 1
-            return f'Found the needle at position {haystack.index(hay)}'
-        
+            return f"Found the needle at position {haystack.index(hay)}"
+
     if needle_count == 0:
-        return 'There are no needles!'
+        return "There are no needles!"
