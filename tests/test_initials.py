@@ -32,3 +32,10 @@ def test_name_that_is_all_uppercase():
 
     assert output == "B.H.Obama"
 
+def test_longer_names():
+
+    insert = "george smith peter rabbit harry gregg david scott"
+
+    output = initials(insert)
+
+    assert output == "G.S.P.R.H.G.D.Scott"
