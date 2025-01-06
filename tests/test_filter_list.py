@@ -28,9 +28,10 @@ def test_returns_empty_list_where_all_strings():
 
     assert output == []
 
+
 def test_returns_only_numbers_where_mix_of_data_types():
 
-    insert = ['a', 1, 6, 3, 1.4, [1], 'b']
+    insert = ["a", 1, 6, 3, 1.4, [1], "b"]
 
     output = filter_list(insert)
 
