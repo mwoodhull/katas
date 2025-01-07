@@ -1,5 +1,6 @@
 import string
 
+
 def is_pangram(st):
 
     st_sorted = set(st.lower())
@@ -16,7 +17,7 @@ def is_pangram(st):
 
     if ascii_set == filtered_letters:
         return True
-    
+
     else:
 
         return False
