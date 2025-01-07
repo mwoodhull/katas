@@ -10,10 +10,8 @@ def is_pangram(st):
     for letter in st_sorted:
         if letter.isalpha():
             filtered_letters.add(letter)
-    print(filtered_letters)
 
     ascii_set = set(string.ascii_lowercase)
-    print(ascii_set)
 
     if ascii_set == filtered_letters:
         return True
