@@ -1,41 +1,46 @@
 from src.mumbling import accum
 
+
 def test_returns_single_letter_for_single_letter():
 
-    insert = 'A'
+    insert = "A"
 
     output = accum(insert)
 
-    assert output == 'A'
+    assert output == "A"
+
 
 def test_returns_capitalised_single_letter():
 
-    insert = 'a'
+    insert = "a"
 
     output = accum(insert)
 
-    assert output == 'A'
+    assert output == "A"
+
 
 def test_returns_correct_response_for_two_letter_string():
 
-    insert = 'ab'
+    insert = "ab"
 
     output = accum(insert)
 
-    assert output == 'A-Bb'
+    assert output == "A-Bb"
+
 
 def test_returns_correct_response_for_larger_strings():
 
-    insert = 'abc'
+    insert = "abc"
 
     output = accum(insert)
 
-    assert output == 'A-Bb-Ccc'
+    assert output == "A-Bb-Ccc"
+
 
 def test_returns_correct_response_when_given_mix_of_upper_and_lowercase():
 
-    insert = 'mAtT'
+    insert = "mAtT"
 
     output = accum(insert)
 
-    assert output == 'M-Aa-Ttt-Tttt'
+    assert output == "M-Aa-Ttt-Tttt"
