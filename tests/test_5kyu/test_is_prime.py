@@ -1,5 +1,6 @@
 from src.fivekyu.is_prime import is_prime
 
+
 def test_returns_false_for_0():
 
     insert = 0
@@ -7,6 +8,7 @@ def test_returns_false_for_0():
     output = is_prime(insert)
 
     assert output is False
+
 
 def test_returns_false_for_even_numbers():
 
@@ -16,6 +18,7 @@ def test_returns_false_for_even_numbers():
 
     assert output is False
 
+
 def test_returns_false_for_negative_numbers():
 
     insert = -7
@@ -23,6 +26,7 @@ def test_returns_false_for_negative_numbers():
     output = is_prime(insert)
 
     assert output is False
+
 
 def test_returns_true_for_primes():
 
