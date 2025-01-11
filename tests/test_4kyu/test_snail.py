@@ -1,0 +1,1 @@
+from src.fourkyu.snail import snail
