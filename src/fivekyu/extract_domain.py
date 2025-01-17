@@ -2,10 +2,13 @@ import re
 
 def domain_name(url):
 
-    pattern = r"(?<=\/\/).+(?=....)"
+    pattern = r"(?:https?:\/\/)?(?:www\.)?([a-zA-Z0-9-]+)"
 
     match = re.search(pattern, url)
-    print(match.group())
+
     if match:
 
-        return match.group()
+        return match.group(1)
+        
+    else:
+        return 'not found'
