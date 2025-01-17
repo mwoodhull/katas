@@ -2,10 +2,10 @@ import re
 
 def domain_name(url):
 
-    pattern = r"/(?<=\/\/).+(?=....)"
+    pattern = r"(?<=\/\/).+(?=....)"
 
     match = re.search(pattern, url)
-    print(match)
+    print(match.group())
     if match:
 
-        return match
+        return match.group()

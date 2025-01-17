@@ -8,7 +8,7 @@ def test_empty_string_returns_empty_string():
 
     assert output == ''
 
-def test_url_returns_domain_name():
+def test_url_returns_domain_name_with_dotcom_at_end():
 
     insert = 'http://github.com'
 
