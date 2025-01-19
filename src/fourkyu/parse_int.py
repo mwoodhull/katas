@@ -39,18 +39,24 @@ def parse_int(string):
 
     powers_dict = {"hundred": 100, "thousand": 1000, "million": 1000000000}
 
-    for key in unit_dict:
-        if string == key:
-            return unit_dict[string]
+    string_lst = string.split()
+    num_lst = []
+
+    for num in string_lst:
+        if num in unit_dict:
+            num_lst.append(unit_dict[num])
+        elif num in teens_dict:
+            num_lst.append(teens_dict[num])
+        elif num in tens_dict:
+            num_lst.append(tens_dict[num])
+        elif num in powers_dict:
+            num_lst.append(powers_dict[num])
+            
+    if len(num_lst) == 1:
+        return num_lst[0]
+    
+    else:
+        return sum(num_lst)
         
-    for key in teens_dict:
-        if string == key:
-            return teens_dict[string]
-        
-    for key in tens_dict:
-        if string == key:
-            return tens_dict[string]
-        
-    for key in powers_dict:
-        if string == key:
-            return powers_dict[string]
+        # else:
+        #     pass
