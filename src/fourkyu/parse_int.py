@@ -39,8 +39,9 @@ def parse_int(string):
 
     powers_dict = {"hundred": 100, "thousand": 1000, "million": 1000000000}
 
-    string_lst = string.split()
+    string_lst = string.replace('-', ' ').split()
     num_lst = []
+
 
     for num in string_lst:
         if num in unit_dict:
@@ -55,8 +56,19 @@ def parse_int(string):
     if len(num_lst) == 1:
         return num_lst[0]
     
-    else:
+    if 2 <= len(num_lst) < 4:
         return sum(num_lst)
         
-        # else:
-        #     pass
+    if len(num_lst) < 5:
+        num_lst[0:2] = [num_lst[0] * num_lst[1]]
+        return sum(num_lst)
+    
+    if len(num_lst) < 6:
+        num_lst[1:3] = [num_lst[1] * num_lst[2]]
+        return sum(num_lst)
+    
+    if len(num_lst) < 7:
+        num_lst[0:2] = [num_lst[0] * num_lst[1]]
+        num_lst[1:3] = [num_lst[1] * num_lst[2]]
+        return sum(num_lst)
+        
