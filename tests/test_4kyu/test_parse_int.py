@@ -76,7 +76,7 @@ def test_powers():
 
     output = parse_int(insert)
 
-    assert output == 1000000000
+    assert output == 1000000
 
 
 def test_tens_units_combination():
@@ -199,7 +199,7 @@ def test_tens_of_thousands():
 
     output = parse_int(insert)
 
-    assert output == 101
+    assert output == 50000
 
     insert = 'thirty thousand six hundred and ninety-four'
 
@@ -212,3 +212,17 @@ def test_tens_of_thousands():
     output = parse_int(insert)
 
     assert output == 89694
+
+def test_one_million():
+
+    insert = 'one million'
+
+    output = parse_int(insert)
+
+    assert output == 1000000
+
+    insert = 'one million seven hundred and ninety-nine thousand six hundred and forty-one'
+
+    output = parse_int(insert)
+
+    assert output == 1799641

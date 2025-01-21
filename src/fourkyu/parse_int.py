@@ -37,7 +37,7 @@ def parse_int(string):
         "ninety": 90,
     }
 
-    powers_dict = {"hundred": 100, "thousand": 1000, "million": 1000000000}
+    powers_dict = {"hundred": 100, "thousand": 1000, "million": 1000000}
 
     string_lst = string.replace("-", " ").split()
     current_total = 0
