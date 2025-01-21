@@ -145,7 +145,7 @@ def test_can_handle_hyphens():
 
 def test_thousands_hundreds_tens_units_combination():
 
-    insert = 'thousand seven hundred fifty six'
+    insert = 'one thousand seven hundred fifty six'
 
     output = parse_int(insert)
 
