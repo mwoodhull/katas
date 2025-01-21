@@ -41,34 +41,50 @@ def parse_int(string):
 
     string_lst = string.replace('-', ' ').split()
     num_lst = []
+    current_total = 0
+    final_total = 0
 
 
     for num in string_lst:
         if num in unit_dict:
             num_lst.append(unit_dict[num])
+            current_total += unit_dict[num]
         elif num in teens_dict:
             num_lst.append(teens_dict[num])
+            current_total += teens_dict[num]
         elif num in tens_dict:
             num_lst.append(tens_dict[num])
+            current_total *= tens_dict[num]
         elif num in powers_dict:
             num_lst.append(powers_dict[num])
-            
-    if len(num_lst) == 1:
-        return num_lst[0]
-    
-    if 2 <= len(num_lst) < 4:
-        return sum(num_lst)
+            final_total += current_total
+            current_total = 0
         
-    if len(num_lst) < 5:
-        num_lst[0:2] = [num_lst[0] * num_lst[1]]
-        return sum(num_lst)
+    final_total += current_total
+    return final_total
+    # if len(num_lst) == 1:
+    #     return num_lst[0]
+
+    # if len(num_lst) == 2 and 1000 in num_lst:
+    #     return sum(num_lst)
+
+    # if len(num_lst) < 4 and 1000 in num_lst or len(num_lst) < 4 and 100 in num_lst and 100 != num_lst[0]:
+    #     num_lst [0:2] = [num_lst[0] * num_lst[1]]
+    #     return sum(num_lst)
     
-    if len(num_lst) < 6:
-        num_lst[1:3] = [num_lst[1] * num_lst[2]]
-        return sum(num_lst)
+    # if len(num_lst) < 4:
+    #     return sum(num_lst)
+        
+    # if len(num_lst) < 5:
+    #     num_lst[0:2] = [num_lst[0] * num_lst[1]]
+    #     return sum(num_lst)
     
-    if len(num_lst) < 7:
-        num_lst[0:2] = [num_lst[0] * num_lst[1]]
-        num_lst[1:3] = [num_lst[1] * num_lst[2]]
-        return sum(num_lst)
+    # if len(num_lst) < 6:
+    #     num_lst[1:3] = [num_lst[1] * num_lst[2]]
+    #     return sum(num_lst)
+    
+    # if len(num_lst) < 7:
+    #     num_lst[0:2] = [num_lst[0] * num_lst[1]]
+    #     num_lst[1:3] = [num_lst[1] * num_lst[2]]
+    #     return sum(num_lst)
         

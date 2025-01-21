@@ -166,3 +166,49 @@ def test_multiple_thousand_and_one():
     output = parse_int(insert)
 
     assert output == 6001
+
+    insert = 'thousand and one'
+
+    output = parse_int(insert)
+
+    assert output == 1001
+
+def test_hundred_and_one_digit():
+
+    insert = 'six hundred and one'
+
+    output = parse_int(insert)
+
+    assert output == 601
+
+    insert = 'hundred and one'
+
+    output = parse_int(insert)
+
+    assert output == 101
+
+def test_tens_of_thousands():
+
+    insert = 'ten thousand'
+
+    output = parse_int(insert)
+
+    assert output == 10000
+
+    insert = 'fifty thousand'
+
+    output = parse_int(insert)
+
+    assert output == 101
+
+    insert = 'thirty thousand six hundred and ninety-four'
+
+    output = parse_int(insert)
+
+    assert output == 30694
+
+    insert = 'eighty-nine thousand six hundred and ninety-four'
+
+    output = parse_int(insert)
+
+    assert output == 89694
