@@ -81,147 +81,159 @@ def test_powers():
 
 def test_tens_units_combination():
 
-    insert = 'twenty three'
+    insert = "twenty three"
 
     output = parse_int(insert)
 
     assert output == 23
 
-    insert = 'ninety six'
+    insert = "ninety six"
 
     output = parse_int(insert)
 
     assert output == 96
 
-    insert = 'seventy one'
+    insert = "seventy one"
 
     output = parse_int(insert)
 
     assert output == 71
 
+
 def test_single_hundreds_tens_units_combination():
 
-    insert = 'hundred thirty four'
+    insert = "hundred thirty four"
 
     output = parse_int(insert)
 
     assert output == 134
 
+
 def test_multiple_hundreds_tens_units_combination():
 
-    insert = 'nine hundred fifty eight'
+    insert = "nine hundred fifty eight"
 
     output = parse_int(insert)
 
     assert output == 958
 
-    insert = 'six hundred thirty two'
+    insert = "six hundred thirty two"
 
     output = parse_int(insert)
 
-    assert output == 632 
+    assert output == 632
+
 
 def test_can_handle_ands():
 
-    insert = 'seven hundred and twenty two'
+    insert = "seven hundred and twenty two"
 
     output = parse_int(insert)
 
     assert output == 722
 
+
 def test_can_handle_hyphens():
 
-    insert = 'two hundred forty-five'
+    insert = "two hundred forty-five"
 
     output = parse_int(insert)
 
     assert output == 245
 
-    insert = 'six-hundred and ninety-one'
+    insert = "six-hundred and ninety-one"
 
     output = parse_int(insert)
 
     assert output == 691
 
+
 def test_thousands_hundreds_tens_units_combination():
 
-    insert = 'one thousand seven hundred fifty six'
+    insert = "one thousand seven hundred fifty six"
 
     output = parse_int(insert)
 
     assert output == 1756
 
+
 def test_multiple_thousands_hundreds_tens_units_combination():
 
-    insert = 'seven thousand two hundred and forty-nine'
+    insert = "seven thousand two hundred and forty-nine"
 
     output = parse_int(insert)
 
     assert output == 7249
 
+
 def test_multiple_thousand_and_one():
 
-    insert = 'six thousand and one'
+    insert = "six thousand and one"
 
     output = parse_int(insert)
 
     assert output == 6001
 
-    insert = 'thousand and one'
+    insert = "thousand and one"
 
     output = parse_int(insert)
 
     assert output == 1001
 
+
 def test_hundred_and_one_digit():
 
-    insert = 'six hundred and one'
+    insert = "six hundred and one"
 
     output = parse_int(insert)
 
     assert output == 601
 
-    insert = 'hundred and one'
+    insert = "hundred and one"
 
     output = parse_int(insert)
 
     assert output == 101
 
+
 def test_tens_of_thousands():
 
-    insert = 'ten thousand'
+    insert = "ten thousand"
 
     output = parse_int(insert)
 
     assert output == 10000
 
-    insert = 'fifty thousand'
+    insert = "fifty thousand"
 
     output = parse_int(insert)
 
     assert output == 50000
 
-    insert = 'thirty thousand six hundred and ninety-four'
+    insert = "thirty thousand six hundred and ninety-four"
 
     output = parse_int(insert)
 
     assert output == 30694
 
-    insert = 'eighty-nine thousand six hundred and ninety-four'
+    insert = "eighty-nine thousand six hundred and ninety-four"
 
     output = parse_int(insert)
 
     assert output == 89694
 
+
 def test_one_million():
 
-    insert = 'one million'
+    insert = "one million"
 
     output = parse_int(insert)
 
     assert output == 1000000
 
-    insert = 'one million seven hundred and ninety-nine thousand six hundred and forty-one'
+    insert = (
+        "one million seven hundred and ninety-nine thousand six hundred and forty-one"
+    )
 
     output = parse_int(insert)
 
