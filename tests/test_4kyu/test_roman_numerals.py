@@ -9,8 +9,7 @@ def test_one_returns_I():
     assert RomanNumerals.to_roman(7) == 'VII'
 
 
-
-def test_tens_returns_correct_response():
+def test_int_to_numerals_tens_returns_correct_response():
 
     assert RomanNumerals.to_roman(30) == 'XXX'
 
@@ -22,7 +21,7 @@ def test_tens_returns_correct_response():
 
     assert RomanNumerals.to_roman(85) == 'LXXXV'
 
-def test_hundreds_returns_correct_response():
+def test_int_to_numerals_hundreds_returns_correct_response():
 
     assert RomanNumerals.to_roman(300) == 'CCC'
 
@@ -34,13 +33,41 @@ def test_hundreds_returns_correct_response():
 
     assert RomanNumerals.to_roman(585) == 'DLXXXV'
 
-def test_thousands_returns_correct_response():
+def test_int_to_numerals_thousands_returns_correct_response():
 
     assert RomanNumerals.to_roman(1300) == 'MCCC'
 
     assert RomanNumerals.to_roman(2211) == 'MMCCXI'
 
     assert RomanNumerals.to_roman(3917) == 'MMMCMXVII'
+
+def test_1001_or_101_returns_correct_response():
+
+    assert RomanNumerals.to_roman(1001) == 'MI'
+
+    assert RomanNumerals.to_roman(101) == 'CI'
+
+    assert RomanNumerals.to_roman(1031) == 'MXXXI'
+
+    assert RomanNumerals.to_roman(1801) == 'MDCCCI'
+
+
+
+def test_numerals_to_int_units_returns_correct_response():
+
+    assert RomanNumerals.from_roman('III') == 3
+
+    assert RomanNumerals.from_roman('VII') == 7
+
+    assert RomanNumerals.from_roman('IX') == 9
+
+# def test_numerals_to_int_tens_returns_correct_response():
+
+#     assert RomanNumerals.from_roman('XV') == 15
+
+#     assert RomanNumerals.from_roman('XXXI') == 31
+
+#     assert RomanNumerals.from_roman('XCIX') == 99
 
 #     3856
 

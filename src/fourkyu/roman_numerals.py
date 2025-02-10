@@ -36,31 +36,35 @@ class RomanNumerals:
                         3000: 'MMM'}
 
         num_lst = list(map(int, str(val)))
+        new_lst = []
         multi = 1
         numerals_lst = []
 
         for i in range(len(num_lst) -1, -1, -1):
-            num_lst[i] *= multi
-            multi *= 10
+            if num_lst[i] != 0:
+                new_lst.insert(0, num_lst[i] * multi)
+                multi *= 10
+            else:
+                multi *= 10
             
-        for num in num_lst:
+        for num in new_lst:
             if num in numeral_units:
                 numerals_lst.append(numeral_units[num])
 
-            if num in numeral_tens:
+            elif num in numeral_tens:
                 numerals_lst.append(numeral_tens[num])
 
-            if num in numeral_hunds:
+            elif num in numeral_hunds:
                 numerals_lst.append(numeral_hunds[num])
 
-            if num in numeral_thous:
+            elif num in numeral_thous:
                 numerals_lst.append(numeral_thous[num])
 
         return "".join(numerals_lst)
 
     @staticmethod
     def from_roman(roman_num : str) -> int:
-        nums =      {'I': 1,
+        int_units = {'I': 1,
                     'II': 2,
                     'III': 3,
                     'IV': 4,
@@ -74,4 +78,31 @@ class RomanNumerals:
                     'C': 100,
                     'D': 500,
                     'M': 1000}
-        return nums[roman_num]
+        
+        
+        int_tens = {'X': 10,
+                    'XX': 20,
+                    'XXX': 30,
+                    'XL': 40,
+                    'L': 50,
+                    'LX': 60,
+                    'LXX': 70,
+                    'LXXX': 80,
+                    'XC': 90}
+        
+        int_hunds = {'C': 100,
+                    'CC': 200,
+                    'CCC': 300,
+                    'CD': 400,
+                    'D': 500,
+                    'DC': 600,
+                    'DCC': 700,
+                    'DCCC': 800,
+                    'CM': 900}
+        
+        int_thous = {'M': 1000,
+                    'MM': 2000,
+                    'MMM': 3000}
+        
+        if roman_num in int_units:
+            return int_units[roman_num]
