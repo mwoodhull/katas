@@ -12,15 +12,51 @@ class RomanNumerals:
                     9: 'IX'}
         
         numeral_tens = {10: 'X',
-                        100: 'C'
-                        1000: 'M'}
+                        20: 'XX',
+                        30: 'XXX',
+                        40: 'XL',
+                        50: 'L',
+                        60: 'LX',
+                        70: 'LXX',
+                        80: 'LXXX',
+                        90: 'XC'}
         
-        numeral_fives = {50: 'L',
-                         500: 'D'}
+        numeral_hunds = {100: 'C',
+                        200: 'CC',
+                        300: 'CCC',
+                        400: 'CD',
+                        500: 'D',
+                        600: 'DC',
+                        700: 'DCC',
+                        800: 'DCCC',
+                        900: 'CM'}
         
-        
+        numeral_thous = {1000: 'M',
+                        2000: 'MM',
+                        3000: 'MMM'}
 
-        return numerals[val]
+        num_lst = list(map(int, str(val)))
+        multi = 1
+        numerals_lst = []
+
+        for i in range(len(num_lst) -1, -1, -1):
+            num_lst[i] *= multi
+            multi *= 10
+            
+        for num in num_lst:
+            if num in numeral_units:
+                numerals_lst.append(numeral_units[num])
+
+            if num in numeral_tens:
+                numerals_lst.append(numeral_tens[num])
+
+            if num in numeral_hunds:
+                numerals_lst.append(numeral_hunds[num])
+
+            if num in numeral_thous:
+                numerals_lst.append(numeral_thous[num])
+
+        return "".join(numerals_lst)
 
     @staticmethod
     def from_roman(roman_num : str) -> int:
