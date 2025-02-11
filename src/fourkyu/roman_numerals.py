@@ -81,7 +81,6 @@ class RomanNumerals:
         numeral_list = list(roman_num)
         integer_list = []
         total = 0
-        print(numeral_list)
 
         for rom_num in numeral_list:
             integer_list.append(numeral_dict[rom_num])

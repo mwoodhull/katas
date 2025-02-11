@@ -84,6 +84,7 @@ def test_numerals_to_int_hundreds_returns_correct_response():
 
     assert RomanNumerals.from_roman("CMXCIX") == 999
 
+
 def test_numerals_to_int_thousands_returns_correct_response():
 
     assert RomanNumerals.from_roman("MCXI") == 1111
@@ -93,6 +94,7 @@ def test_numerals_to_int_thousands_returns_correct_response():
     assert RomanNumerals.from_roman("MMMD") == 3500
 
     assert RomanNumerals.from_roman("MMMCMXLIX") == 3949
+
 
 def test_numerals_to_int_101_and_1001_returns_correct_response():
 
